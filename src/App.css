@@ -1,38 +1,128 @@
-.App {
-  text-align: center;
+body {
+    background-color: rgb(28, 28, 28);
+    color: white;
+    transition: all 0.3s ease;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  z-index: 1;
+}
+.modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
 }
 
-.App-link {
-  color: #61dafb;
+.modal-img {
+  max-width: 100%;
+  max-height: 85vh;
+  display: block;
+  border-radius: 8px;
+  object-fit: contain;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.close-btn {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.gif-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; 
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.gif-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.gif-title {
+    font-size: 15px;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+.gif-img {
+    height: 220px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.search-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inputSearch {
+    border: 1px solid black;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    height: 30px;
+    width: 1000px;
+}
+.btnSearch {
+    cursor: pointer;
+    height: 33.5px;
+    background-color: white;
+    border: 1px solid black;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: all 0.3s ease;
+}
+.btnSearch:hover {
+    background-color: rgba(144, 143, 143, 0.174);
+}
+
+.pages {
+    display: block;
+    text-align: center;
+    margin: 20px;
+}
+.nav-buttons { 
+    display: flex;
+}
+
+.previousbtn {
+    cursor: pointer;
+    color: white;
+    background-color: transparent;
+    border: none;
+    display: block;
+    margin: 0 auto;
+}
+.nextbtn {
+    cursor: pointer;
+    color: white;
+    background-color: transparent;
+    border: none;
+    display: block;
+    margin: 0 auto;
+}
+
+.previousbtn:disabled {
+    cursor: default;
+    color: red;
+}
+.nextbtn:disabled {
+    color: red;
 }
